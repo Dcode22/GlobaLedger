@@ -16,7 +16,7 @@
                         <button id="add-expense-btn"><b>+ Add Expense</b></button>
                         <button id="add-income-btn"><b>+ Add Income</b></button>
                     </div>
-                    <form id="add-expense-form" class="add-transaction-form" action="http://localhost:3000/api/transactions/" method="post">
+                    <form id="add-expense-form" class="add-transaction-form" action="<%= process.env.API_URL %>/api/transactions/" method="post">
                         <h2>ADD EXPENSE:</h2>
                         <label for="description">Description:</label>
                         <input type="text" id="description" name="description" required>
@@ -46,7 +46,7 @@
                             <button class="cancel-transaction button-outline" type="button"><b>Cancel</b></button>
                         </div>
                     </form>
-                    <form id="add-income-form" class="add-transaction-form" action="http://localhost:3000/api/transactions/" method="post">
+                    <form id="add-income-form" class="add-transaction-form" action="<%= process.env.API_URL %>/api/transactions/" method="post">
                         <h2>ADD INCOME:</h2>
                         <input type="hidden" name="income" value="true">
                         <label for="description">Description:</label>

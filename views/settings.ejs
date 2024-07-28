@@ -12,7 +12,7 @@
         <h1>Settings</h1>
         <section id="profile-section">
             <h2>Profile</h2>
-            <form action="http://localhost:3000/api/users/update/<%= locals.user.userid %>" method="post">
+            <form action="<%= process.env.API_URL %>/api/users/update/<%= locals.user.userid %>" method="post">
                 <div class="form-inputs">
                     <div>
                         <label for="firstname">First Name:</label> <br>
@@ -30,7 +30,7 @@
             <h2>Accounts</h2>
             <% for(const account of locals.accounts){%>
                 <h3><%= account.name %></h3>
-                <form class="subsection-form" action="http://localhost:3000/api/accounts/<%= account.accountid %>" method="post">
+                <form class="subsection-form" action="<%= process.env.API_URL %>/api/accounts/<%= account.accountid %>" method="post">
                     <div class="form-inputs">
                         <div>
                             <label for="name">Name:</label> <br>
@@ -48,7 +48,7 @@
                     <button class="button-outline" type="submit">Update</button>
                 </form>
             <% } %>
-            <form id="create-account-form"  action="http://localhost:3000/api/accounts/" method="post">
+            <form id="create-account-form"  action="<%= process.env.API_URL %>/api/accounts/" method="post">
                 <h3>ADD ACCOUNT:</h3>
                 <div class="form-inputs">
                     <div>
@@ -80,7 +80,7 @@
             <h2>Categories</h2>
             <% for(const category of locals.categories){%>
                 <h3><%= category.name %></h3>
-                <form class="subsection-form" action="http://localhost:3000/api/cat/update" method="post">
+                <form class="subsection-form" action="<%= process.env.API_URL %>/api/cat/update" method="post">
                     <div class="form-inputs">
                         <div>
                             <label for="name">Name:</label> <br>
@@ -102,7 +102,7 @@
                     <button class="button-outline" type="submit">Update</button>
                 </form>
             <% } %>
-            <form id="create-category-form" action="http://localhost:3000/api/cat/" method="post">
+            <form id="create-category-form" action="<%= process.env.API_URL %>/api/cat/" method="post">
                 <h3>ADD CATEGORY:</h3>
                 <div class="form-inputs">
                     <div>

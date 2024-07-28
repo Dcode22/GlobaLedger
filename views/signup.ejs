@@ -10,7 +10,7 @@
     <%- include('partials/header', {loggedIn: locals.loggedIn, user: locals.user}) %>
     <div id="signup-main">
         <% if(!locals.login) { %>
-            <form action="http://localhost:3000/signup" method="POST">
+            <form action="<%= process.env.API_URL %>/signup" method="POST">
                 <label for="firstname">First Name:</label>
                 <input type="text" id="firstname" name="firstname" required>
                 
@@ -28,7 +28,7 @@
                 <button type="submit">Sign Up</button>
             </form>
         <% } else { %>
-            <form action="http://localhost:3000/login" method="POST">
+            <form action="<%= process.env.API_URL %>/login" method="POST">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 
