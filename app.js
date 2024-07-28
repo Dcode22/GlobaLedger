@@ -27,6 +27,7 @@ app.use(session({
 
 app.use(express.urlencoded({extended: true})) // to parse urlencoded data
 app.use(express.json()) // to parse json data
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'))
 app.use((req, res, next) => {
